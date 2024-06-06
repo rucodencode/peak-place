@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse
-
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the peak-place index.")
+    return render(request, 'places/index.html')
+
+def add(request):
+    return render(request, 'places/add.html')
