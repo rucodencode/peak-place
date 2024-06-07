@@ -1,4 +1,20 @@
 {% extends 'base.html' %}
+
 {% block content %}
-  Это главная страница проекта «Анфиса для друзей»!
+{% for place in places %}
+  <ul>
+    <li>
+      <h2>{{ place.name }}</h2>
+    </li>
+    <li>
+      Автор: {{ place.author }}
+    </li>
+    <li>
+      Дата публикации: {{ place.pub_date|date:"d E Y" }}
+    </li>
+  </ul>
+  <p>{{ post.text }}</p>    
+  <a href="">все записи группы</a>
+  {% if not forloop.last %}<hr>{% endif %}
+{% endfor %} 
 {% endblock %} 
